@@ -1,0 +1,75 @@
+﻿@model IEnumerable<StockCardApplication.Models.StockCard>
+
+@{
+    ViewBag.Title = "Stok Kartı";
+}
+
+<h2>Stok Kartı</h2>
+
+<p>
+    @Html.ActionLink("Yeni Stok", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StockNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StockName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StockCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kdv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StockDetails)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WarehouseNo)
+        </th>
+        <th>         
+            @Html.DisplayNameFor(model => model.RegisterDate)
+            (Yıl/Ay/Gün)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StockNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StockName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StockCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kdv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StockDetails)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WarehouseNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegisterDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
